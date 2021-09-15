@@ -1,0 +1,13 @@
+name: Dispatch
+
+on:
+  repository_dispatch:
+    types: [repository-a-release, repository-b-release]
+
+jobs:
+  test:
+    name: Dispatch Event
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo 'Received dispatch event!'
